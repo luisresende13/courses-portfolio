@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Learning Portfolio
 
-## Getting Started
+A personal portfolio and course tracker for Coursera programs focused on AI, Machine Learning, and Data Science. Built to solve two pain points Coursera doesn't handle well:
 
-First, run the development server:
+- **Course completion tracking** — see at a glance which courses within a program are done
+- **Course overlap detection** — discover which courses are shared across multiple programs, so you can prioritize efficiently
+
+Live site: [courses-portfolio.vercel.app](https://courses-portfolio.vercel.app) <!-- update once deployed -->
+
+---
+
+## Pages
+
+| Route | Purpose |
+|---|---|
+| `/` | Hero landing page with stats and quick links |
+| `/programs` | Grid of all 21 programs, color-coded by status |
+| `/programs/[slug]` | Course list with completion status + shared-program badges |
+| `/courses` | Course lookup and two-program comparison tool |
+| `/accomplishments` | Completed certificates and sortable grade table |
+| `/roadmap` | Priority strategy: which programs to finish first and why |
+
+---
+
+## Tech Stack
+
+- **Next.js 15** (App Router, static export)
+- **Tailwind CSS**
+- **TypeScript**
+- No database, no auth — fully static, hostable on Vercel or GitHub Pages
+
+---
+
+## Data
+
+All data is hardcoded in TypeScript files under `data/`:
+
+| File | Contents |
+|---|---|
+| `data/courses.ts` | ~75 unique courses (master list with grades and certificate URLs) |
+| `data/programs.ts` | 21 programs referencing course IDs |
+| `data/accomplishments.ts` | 10 completed certificates |
+| `data/strategy.ts` | Priority ranking of unfinished programs |
+
+Course overlap is computed at module load time via a prebuilt `Map<courseId, programId[]>` — no database queries needed.
+
+---
+
+## Running Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # static export to /out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+courses-portfolio/
+├── app/                    # Next.js App Router pages
+├── components/             # UI components (server + client)
+│   ├── layout/             # Navbar
+│   ├── programs/           # ProgramCard, ProgressBar, StatusBadge
+│   ├── courses/            # CourseOverlapExplorer
+│   ├── accomplishments/    # CertificateCard, GradeTable
+│   └── roadmap/            # PriorityCard
+├── data/                   # Static TypeScript data files
+├── lib/                    # Overlap logic, program utils
+└── public/                 # Static assets (profile photo)
+```
