@@ -11,8 +11,9 @@ export function generateStaticParams() {
   return programs.map(p => ({ slug: p.id }));
 }
 
-export default function ProgramDetailPage({ params }: { params: { slug: string } }) {
-  const program = programMap.get(params.slug);
+export default async function ProgramDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const program = programMap.get(slug);
   if (!program) notFound();
 
   const { done, total } = getProgress(program);
