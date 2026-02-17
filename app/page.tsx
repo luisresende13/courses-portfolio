@@ -25,26 +25,26 @@ export default function Home() {
       <section className="pt-8 pb-4 flex flex-col-reverse md:flex-row items-center gap-10">
         <div className="flex-1">
           <p className="text-sm font-medium text-blue-600 mb-3 uppercase tracking-widest">AI / ML / Data Science Portfolio</p>
-          <h1 className="text-4xl font-bold text-slate-900 leading-tight mb-4">
+          <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-100 leading-tight mb-4">
             Learning at the frontier<br />of artificial intelligence.
           </h1>
-          <p className="text-lg text-slate-500 max-w-xl mb-8">
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl mb-8">
             A structured journey through IBM&apos;s professional certification ecosystem — spanning Data Science, Machine Learning, Deep Learning, Generative AI, and Agentic AI.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/accomplishments" className="px-5 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors">
+            <Link href="/accomplishments" className="px-5 py-2.5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg text-sm font-medium hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors">
               View Accomplishments
             </Link>
-            <Link href="/programs" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+            <Link href="/programs" className="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
               Browse Programs
             </Link>
-            <Link href="/roadmap" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+            <Link href="/roadmap" className="px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
               Learning Roadmap
             </Link>
           </div>
         </div>
         <div className="shrink-0">
-          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
+          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700">
             <Image
               src="/profile.jpeg"
               alt="Luis Resende"
@@ -60,31 +60,31 @@ export default function Home() {
       {/* Stats */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {stats.map(stat => (
-          <div key={stat.label} className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm text-center">
+          <div key={stat.label} className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm text-center">
             <div className={`text-3xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
-            <div className="text-sm text-slate-500">{stat.label}</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</div>
           </div>
         ))}
       </section>
 
       {/* Quick links */}
       <section>
-        <h2 className="text-lg font-semibold text-slate-900 mb-4">Explore</h2>
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Explore</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link href="/programs" className="group bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+          <Link href="/programs" className="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-600 transition-all">
             <div className="text-2xl mb-2">📋</div>
-            <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">All Programs</h3>
-            <p className="text-sm text-slate-500">{completed} completed, {inProgress} in progress across {programs.length} total programs.</p>
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">All Programs</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">{completed} completed, {inProgress} in progress across {programs.length} total programs.</p>
           </Link>
-          <Link href="/courses" className="group bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+          <Link href="/courses" className="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-600 transition-all">
             <div className="text-2xl mb-2">🔍</div>
-            <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">Course Overlap</h3>
-            <p className="text-sm text-slate-500">See which courses are shared between programs and compare any two programs side by side.</p>
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">Course Overlap</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">See which courses are shared between programs and compare any two programs side by side.</p>
           </Link>
-          <Link href="/roadmap" className="group bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+          <Link href="/roadmap" className="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-600 transition-all">
             <div className="text-2xl mb-2">🗺️</div>
-            <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">Learning Roadmap</h3>
-            <p className="text-sm text-slate-500">Strategic analysis of which programs unlock the most other programs when completed.</p>
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">Learning Roadmap</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">Strategic analysis of which programs unlock the most other programs when completed.</p>
           </Link>
         </div>
       </section>

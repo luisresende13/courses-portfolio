@@ -20,8 +20,8 @@ export default function ProgramsPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900 mb-1">Programs</h1>
-        <p className="text-slate-500 text-sm">{programs.length} total programs — specializations and professional certificates.</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1">Programs</h1>
+        <p className="text-slate-500 dark:text-slate-400 text-sm">{programs.length} total programs — specializations and professional certificates.</p>
       </div>
 
       {/* Filter tabs */}
@@ -32,8 +32,8 @@ export default function ProgramsPage() {
             onClick={() => setFilter(f.value)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               filter === f.value
-                ? 'bg-slate-900 text-white'
-                : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
+                ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
+                : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'
             }`}
           >
             {f.label}
