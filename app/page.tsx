@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { programs } from '@/data/programs';
 import { courses } from '@/data/courses';
 import { accomplishments } from '@/data/accomplishments';
@@ -21,24 +22,38 @@ export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero */}
-      <section className="pt-8 pb-4">
-        <p className="text-sm font-medium text-blue-600 mb-3 uppercase tracking-widest">AI / ML / Data Science Portfolio</p>
-        <h1 className="text-4xl font-bold text-slate-900 leading-tight mb-4">
-          Learning at the frontier<br />of artificial intelligence.
-        </h1>
-        <p className="text-lg text-slate-500 max-w-2xl mb-8">
-          A structured journey through IBM&apos;s professional certification ecosystem — spanning Data Science, Machine Learning, Deep Learning, Generative AI, and Agentic AI.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/accomplishments" className="px-5 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors">
-            View Accomplishments
-          </Link>
-          <Link href="/programs" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
-            Browse Programs
-          </Link>
-          <Link href="/roadmap" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
-            Learning Roadmap
-          </Link>
+      <section className="pt-8 pb-4 flex flex-col-reverse md:flex-row items-center gap-10">
+        <div className="flex-1">
+          <p className="text-sm font-medium text-blue-600 mb-3 uppercase tracking-widest">AI / ML / Data Science Portfolio</p>
+          <h1 className="text-4xl font-bold text-slate-900 leading-tight mb-4">
+            Learning at the frontier<br />of artificial intelligence.
+          </h1>
+          <p className="text-lg text-slate-500 max-w-xl mb-8">
+            A structured journey through IBM&apos;s professional certification ecosystem — spanning Data Science, Machine Learning, Deep Learning, Generative AI, and Agentic AI.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/accomplishments" className="px-5 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors">
+              View Accomplishments
+            </Link>
+            <Link href="/programs" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+              Browse Programs
+            </Link>
+            <Link href="/roadmap" className="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors">
+              Learning Roadmap
+            </Link>
+          </div>
+        </div>
+        <div className="shrink-0">
+          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
+            <Image
+              src="/profile.jpeg"
+              alt="Luis Resende"
+              width={224}
+              height={224}
+              className="object-cover w-full h-full"
+              priority
+            />
+          </div>
         </div>
       </section>
 
