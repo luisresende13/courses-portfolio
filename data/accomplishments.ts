@@ -7,6 +7,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'professional-certificate',
     courseraUrl: 'https://www.coursera.org/professional-certificates/ibm-data-science',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/5VNG3NYEVJNJ',
   },
   {
     programId: 'ibm-machine-learning',
@@ -14,6 +15,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'professional-certificate',
     courseraUrl: 'https://www.coursera.org/professional-certificates/ibm-machine-learning',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/professional-cert/JA2Z7A4AEMG5',
   },
   {
     programId: 'ibm-ai-engineering',
@@ -21,6 +23,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'professional-certificate',
     courseraUrl: 'https://www.coursera.org/professional-certificates/ai-engineer',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/DX5TGA7QCW5F',
   },
   {
     programId: 'key-technologies-for-business',
@@ -28,6 +31,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/key-technologies-for-business',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/VWLJCJ7TWPNE',
   },
   {
     programId: 'introduction-to-data-science',
@@ -35,6 +39,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/introduction-data-science',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/CY2PW33S6JPN',
   },
   {
     programId: 'ibm-introduction-to-machine-learning',
@@ -42,6 +47,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/ibm-intro-machine-learning',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/9TNC6FNBXWVA',
   },
   {
     programId: 'full-stack-web-development-with-react',
@@ -49,6 +55,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'The Hong Kong University of Science and Technology',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/full-stack-react',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/F2LTV96FBR57',
   },
   {
     programId: 'applied-data-science',
@@ -56,6 +63,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/applied-data-science',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/3GL5UQTSKSB6',
   },
   {
     programId: 'ibm-ai-foundations-for-business',
@@ -63,6 +71,7 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/ibm-ai-foundations-for-business',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/CSVEFD9H793F',
   },
   {
     programId: 'generative-ai-for-data-scientists',
@@ -70,5 +79,6 @@ export const accomplishments: Accomplishment[] = [
     institution: 'IBM',
     type: 'specialization',
     courseraUrl: 'https://www.coursera.org/specializations/generative-ai-for-data-scientists',
+    certificateUrl: 'https://www.coursera.org/verify/specialization/RPD6W1MD74HQ',
   },
 ];

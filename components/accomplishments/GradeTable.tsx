@@ -29,6 +29,7 @@ export default function GradeTable({ courses }: { courses: Course[] }) {
             >
               Grade {sortAsc ? '↑' : '↓'}
             </th>
+            <th className="text-right px-4 py-3 font-medium text-slate-600 dark:text-slate-400">Certificate</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
@@ -40,6 +41,20 @@ export default function GradeTable({ courses }: { courses: Course[] }) {
                 <span className={`inline-flex px-2 py-0.5 rounded font-medium text-xs ${gradeColor(course.grade ?? 0)}`}>
                   {course.grade}%
                 </span>
+              </td>
+              <td className="px-4 py-3 text-right">
+                {course.certificateUrl ? (
+                  <a
+                    href={course.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400 hover:underline"
+                  >
+                    View ↗
+                  </a>
+                ) : (
+                  <span className="text-xs text-slate-300 dark:text-slate-600">—</span>
+                )}
               </td>
             </tr>
           ))}

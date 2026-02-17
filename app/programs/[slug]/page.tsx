@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { programs, programMap } from '@/data/programs';
 import { courseMap } from '@/data/courses';
+import { accomplishments } from '@/data/accomplishments';
 import { getOverlappingPrograms, courseToPrograms } from '@/lib/overlap';
 import { getProgress, statusColor, statusLabel, statusBorderColor, typeLabel } from '@/lib/program-utils';
 import StatusBadge from '@/components/programs/StatusBadge';
@@ -18,6 +19,7 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
 
   const { done, total } = getProgress(program);
   const overlapping = getOverlappingPrograms(program.id);
+  const accomplishment = accomplishments.find(a => a.programId === program.id);
 
   return (
     <div className="space-y-8">
@@ -36,14 +38,26 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
         <div className="max-w-sm">
           <ProgressBar done={done} total={total} status={program.status} />
         </div>
-        <a
-          href={program.courseraUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 hover:underline"
-        >
-          View on Coursera ↗
-        </a>
+        <div className="flex flex-wrap gap-3 mt-3">
+          {accomplishment?.certificateUrl && (
+            <a
+              href={accomplishment.certificateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors"
+            >
+              View Certificate ↗
+            </a>
+          )}
+          <a
+            href={program.courseraUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-blue-600 hover:underline"
+          >
+            View on Coursera ↗
+          </a>
+        </div>
       </div>
 
       {/* Course list */}
@@ -71,9 +85,21 @@ export default async function ProgramDetailPage({ params }: { params: Promise<{ 
                     <p className={`text-sm font-medium leading-snug ${pc.completed ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
                       {course.title}
                     </p>
-                    {course.grade !== undefined && (
-                      <p className="text-xs text-emerald-600 mt-0.5">{course.grade}%</p>
-                    )}
+                    <div className="flex items-center gap-2 mt-0.5">
+                      {course.grade !== undefined && (
+                        <span className="text-xs text-emerald-600">{course.grade}%</span>
+                      )}
+                      {course.certificateUrl && (
+                        <a
+                          href={course.certificateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline"
+                        >
+                          Certificate ↗
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
                 {otherPrograms.length > 0 && (

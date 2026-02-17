@@ -7,6 +7,7 @@ export interface Course {
   institution: string;
   grade?: number;
   completed: boolean;
+  certificateUrl?: string;
 }
 
 export interface ProgramCourse {
@@ -41,6 +42,7 @@ export interface Accomplishment {
   institution: string;
   type: ProgramType;
   courseraUrl: string;
+  certificateUrl?: string;
 }
 
 export interface StrategyItem {
